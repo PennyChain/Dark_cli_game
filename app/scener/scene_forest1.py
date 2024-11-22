@@ -1,5 +1,5 @@
 import time
-import effects.ted as ted
+from effects import ted
 from scener.scene_creature1 import scene_creature1
 
 
@@ -28,9 +28,9 @@ def scene_forest1():
         if x >= 1:
             print("Do you turn it on?\n")
         
-        valg2 = input().strip().lower()
+        valg = input().strip().lower()
 
-        action = ted.interpret_choice(valg2, local_yes_choices, ted.no_choices, ted.third_choices, ted.quit_choices)
+        action = ted.interpret_choice(valg, local_yes_choices, ted.no_choices, ted.third_choices, ted.quit_choices)
 
         if action == "yes":
             ted.typing_effect("\n\nWhy   did   you   do   that..?\n")

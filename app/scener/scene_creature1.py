@@ -1,6 +1,6 @@
 import time
 import random
-import effects.ted as ted
+from effects import ted
 from scener.scene_died import scene_died
 from scener.scene_scavenge import scene_scavenge
 
@@ -34,9 +34,9 @@ def scene_creature1():
         if x >= 1:
             ted.faster_typing_effect("YOU HAVE TO CHOOSE. NOW!\n")
         
-        valg4 = input().strip().lower()
+        valg = input().strip().lower()
 
-        action = ted.interpret_choice(valg4, local_yes_choices, local_no_choices, local_third_choices, local_quit_choices)
+        action = ted.interpret_choice(valg, local_yes_choices, local_no_choices, local_third_choices, local_quit_choices)
 
         if action == "yes":
             ted.typing_effect("\nYou find the closest tree and climb up it as fast as you can!\n")
@@ -49,7 +49,7 @@ def scene_creature1():
             # scene_lost()
         elif action == "no":
             ted.typing_effect("\nYou run away as fast as you can, but the creature is much faster than you.\n")
-            ted.typing_effect("The creature catches up to you and u get a glimse of it...\n")
+            ted.typing_effect("The creature catches up to you and you get a glimse of it...\n")
             ted.slow_typing_effect("\nWHAT. IS. THAT THING???\n")
             time.sleep(0.2)
             ted.typing_effect("\nThe creature gets ahold of you..\n")

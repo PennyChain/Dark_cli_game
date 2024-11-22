@@ -1,5 +1,3 @@
-import time
-import random
 import effects.ted as ted
 from scener import scene_1
 

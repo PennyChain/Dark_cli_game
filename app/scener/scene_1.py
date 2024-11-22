@@ -1,5 +1,5 @@
 import time
-import effects.ted as ted
+from effects import ted
 from scener.scene_forest1 import scene_forest1
 from scener.scene_bridge1 import scene_bridge1
 
@@ -19,9 +19,9 @@ def scene_1():
         if x >= 1:
             print("Do you follow the sign?\n")
 
-        valg1 = input().strip().lower()
+        valg = input().strip().lower()
         
-        action = ted.interpret_choice(valg1, ted.yes_choices, ted.no_choices, ted.third_choices, ted.quit_choices)
+        action = ted.interpret_choice(valg, ted.yes_choices, ted.no_choices, ted.third_choices, ted.quit_choices)
 
         if action == "yes":
             ted.typing_effect("\n\nYou enter the forest.\n")
