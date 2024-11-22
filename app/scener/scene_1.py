@@ -31,7 +31,7 @@ def scene_1():
             scene_forest1()
             break
         elif action == "no":
-            ted.typing_effect("You choose not to enter the forest and keep walking.\n")
+            ted.typing_effect("\n\nYou choose not to enter the forest and keep walking.\n")
             time.sleep(1)
             scene_bridge1()
             break
