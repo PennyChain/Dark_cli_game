@@ -40,5 +40,5 @@ def scene_1():
             exit_game = True
             break
         else:
-            ted.typing_effect("You're standing still wondering what to do...\n")
+            ted.typing_effect("\nYou're standing still wondering what to do...\n")
             x += 1

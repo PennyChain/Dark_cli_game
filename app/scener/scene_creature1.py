@@ -32,7 +32,7 @@ def scene_creature1():
 
     while True:
         if x >= 1:
-            ted.faster_typing_effect("YOU HAVE TO CHOOSE. NOW!\n")
+            ted.faster_typing_effect("\nYOU HAVE TO CHOOSE. NOW!\n")
         
         valg = input().strip().lower()
 
