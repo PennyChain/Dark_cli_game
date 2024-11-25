@@ -10,7 +10,12 @@ def main(exit_game):
         if velkommen == "no":
             ted.typing_effect("Bye..")
             exit_game = True
+        if velkommen == "n":
+            ted.typing_effect("Bye..")
+            exit_game = True
         elif velkommen == "yes":
+            result = scene_1()
+        elif velkommen == "y":
             result = scene_1()
             if result == "quit":
                 exit_game = True
