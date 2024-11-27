@@ -1,5 +1,4 @@
 import time
-import random
 from effects import ted
 from scener.scene_died import scene_died
 from scener.scene_scavenge import scene_scavenge

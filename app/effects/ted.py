@@ -26,16 +26,16 @@ def faster_typing_effect(text):
 
 # Funksjon for å tolke brukerens input
 def interpret_choice(user_input, yes_choices, no_choices, third_choices, quit_choices):
-    user_input = user_input.lower().strip()
+    user_input = user_input.lower().split()
 
     # Sjekk hele inputen mot forhåndsdefinerte valg
-    if user_input in yes_choices:
+    if any(word in yes_choices for word in user_input):
         return "yes"
-    elif user_input in no_choices:
+    elif any(word in no_choices for word in user_input):
         return "no"
-    elif user_input in third_choices:
+    elif any(word in third_choices for word in user_input):
         return "third"
-    elif user_input in quit_choices:
+    elif any(word in quit_choices for word in user_input):
         return "quit"
 
     return "unknown"
@@ -44,7 +44,7 @@ def interpret_choice(user_input, yes_choices, no_choices, third_choices, quit_ch
 yes_choices = [
     "follow", "yes", "yep", "yup", "yeah", "sure", "yeh", "yh", "okay", "ok", "continue", "go", 
     "let's go", "absolutely", "of course", "why not", "alright", "sure thing", "definitely", 
-    "let's do it", "okey-dokey", "let's roll", "ye", "yuh", "ait", "perchance"
+    "let's do it", "okey-dokey", "let's roll", "ye", "yuh", "ait", "perchance", "y"
 ]
 
 third_choices = []
@@ -52,7 +52,7 @@ third_choices = []
 no_choices = [
     "no", "nope", "nein", "nah", "don't", "dont", "do not", "not at all", "never", "no way", 
     "negative", "nah-uh", "nope", "no thanks", "not really", "not interested", "I don't think so", 
-    "I'd rather not", "nope, thanks", "pass", "no, thanks", "of course not", "not"
+    "I'd rather not", "nope, thanks", "pass", "no, thanks", "of course not", "not", "n"
 ]
 
-quit_choices = ["quit", "leave"]
+quit_choices = ["quit", "leave", "q", "l"]
