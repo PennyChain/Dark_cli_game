@@ -70,7 +70,7 @@ def scene_creature1():
             ted.typing_effect("The creature limps away, ")
             ted.slow_typing_effect("so do you.\n")
             time.sleep(0.2)
-            ted.typing_effect("You need to find some healing supplies..")
+            ted.typing_effect("You need to find some healing supplies..\n")
             scene_scavenge()
         elif action == "quit":
             ted.typing_effect("You kill yourself out of fear.\n")

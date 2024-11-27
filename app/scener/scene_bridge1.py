@@ -28,7 +28,7 @@ def scene_bridge1():
                 ted.typing_effect("\n\nYou walk over to him, but you're very careful.\n")
                 break
             elif action == "no":
-                ted.typing_effect("bridgetest2\n")
+                ted.typing_effect("fortsettelse\n")
                 break
             elif action == "quit":
                 ted.typing_effect("You sit down to rest...\n")

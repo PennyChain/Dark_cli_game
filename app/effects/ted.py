@@ -44,7 +44,7 @@ def interpret_choice(user_input, yes_choices, no_choices, third_choices, quit_ch
 yes_choices = [
     "follow", "yes", "yep", "yup", "yeah", "sure", "yeh", "yh", "okay", "ok", "continue", "go", 
     "let's go", "absolutely", "of course", "why not", "alright", "sure thing", "definitely", 
-    "let's do it", "okey-dokey", "let's roll", "ye", "yuh", "ait", "perchance", "y"
+    "let's do it", "okey-dokey", "let's roll", "ye", "yuh", "ait", "perchance", "y", "i do"
 ]
 
 third_choices = []
