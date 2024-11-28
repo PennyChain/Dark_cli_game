@@ -14,10 +14,11 @@ def scene_creature1():
     local_third_choices = [
         "fight", "fuck", "it", "kill"
     ]
-    local_quit_choices = ted.quit_choices.copy()
-    local_quit_choices.extend ([
-        "myself", "kms"
+    local_four_choices = ted.four_choices.copy()
+    local_four_choices.extend([
+        "kms", 
     ])
+
     
     ted.faster_typing_effect("\nTHERE IS SOMETHING RUNNING TOWARDS YOU!\n")
     time.sleep(0.3)
@@ -35,7 +36,7 @@ def scene_creature1():
         
         valg = input().strip().lower()
 
-        action = ted.interpret_choice(valg, local_yes_choices, local_no_choices, local_third_choices, local_quit_choices)
+        action = ted.interpret_choice(valg, local_yes_choices, local_no_choices, local_third_choices, ted.four_choices, local_four_choices, ted.quit_choices)
 
         if action == "yes":
             ted.typing_effect("\nYou find the closest tree and climb up it as fast as you can!\n")
@@ -72,10 +73,12 @@ def scene_creature1():
             time.sleep(0.2)
             ted.typing_effect("You need to find some healing supplies..\n")
             scene_scavenge()
-        elif action == "quit":
+        elif action == "four":
             ted.typing_effect("You kill yourself out of fear.\n")
             time.sleep(0.6)
             scene_died()
+        elif action == "quit":
+            exit_game = True
             break
         else:
             x += 1

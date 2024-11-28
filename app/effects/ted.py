@@ -25,7 +25,7 @@ def faster_typing_effect(text):
 
 
 # Funksjon for å tolke brukerens input
-def interpret_choice(user_input, yes_choices, no_choices, third_choices, quit_choices):
+def interpret_choice(user_input, yes_choices, no_choices, third_choices, four_choices, quit_choices):
     user_input = user_input.lower().split()
 
     # Sjekk hele inputen mot forhåndsdefinerte valg
@@ -35,6 +35,8 @@ def interpret_choice(user_input, yes_choices, no_choices, third_choices, quit_ch
         return "no"
     elif any(word in third_choices for word in user_input):
         return "third"
+    elif any(word in four_choices for word in user_input):
+        return "four"
     elif any(word in quit_choices for word in user_input):
         return "quit"
 
@@ -47,12 +49,14 @@ yes_choices = [
     "let's do it", "okey-dokey", "let's roll", "ye", "yuh", "ait", "perchance", "y", "i do"
 ]
 
-third_choices = []
-
 no_choices = [
     "no", "nope", "nein", "nah", "don't", "dont", "do not", "not at all", "never", "no way", 
     "negative", "nah-uh", "nope", "no thanks", "not really", "not interested", "I don't think so", 
     "I'd rather not", "nope, thanks", "pass", "no, thanks", "of course not", "not", "n"
 ]
+
+third_choices = []
+
+four_choices = []
 
 quit_choices = ["quit", "leave", "q", "l"]

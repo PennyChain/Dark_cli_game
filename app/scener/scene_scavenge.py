@@ -1,6 +1,6 @@
 import time
 from effects import ted
-from scener import scene_died
+from scener import scene_died, scene_roulette
 
 def scene_scavenge():
     x = 0
@@ -33,29 +33,43 @@ def scene_scavenge():
 
     while True:
         if x >= 1:
-            print("You're very insecure, and have to rethink your decision...")
+            print("You're very insecure, and have to rethink your decision...\n")
 
         valg = input().strip().lower()
 
-        action = ted.interpret_choice(valg, local_yes_choices, local_no_choices, local_third_choices, ted.quit_choices)
+        action = ted.interpret_choice(valg, local_yes_choices, local_no_choices, local_third_choices, ted.four_choices, ted.quit_choices)
 
         if action == "yes":
             ted.typing_effect("\nTurns out he was telling you the truth, and as you walk you can see the abandoned hospital.\n")
             ted.typing_effect("As you approach, you can see that it has been overtaken, and it looks like someone lives there..\n")
             ted.typing_effect("You express your thoughts aloud,\n\nand the guy responds:\n")
             ted.typing_effect('"I didnt tell you this, but I live here..."\n')
+            
             ted.typing_effect("\nYou answer with:\n")
             ted.typing_effect(""""oh... How come you didn't tell me that in the beginning?"\n""")
+            
             print("\nHim:")
             ted.typing_effect('"I guess I just forgot..."\n')
-            ted.typing_effect("\n")
-            # It turns out he was truthfull and lead you to an abandoned hospital,
-            # but he isn't a good guy, he knocks you out.
-            # scene_roulette(# You wake up with something over your head, and the breathing and worrying of another guy.
-            # The guy takes of both of the rags of your heads, theres a table in between you two.
-            # he lays down a revolver and a single bullet. He wants you two to play russian roulette, the winner wins his life back.
-            # If you dont play, he will torture you and kill you.(Her bruker du "random" biblioteket der det er en 1/6 sjangse for å dø for begge hver tur..))
-            pass
+            
+            ted.typing_effect("\nYou shrug it off, and enter the hospital with him.\n")
+            ted.typing_effect("he leads you in through corridors.\n")
+            ted.typing_effect("the further in you go, the more concerned you get.\n")
+            
+            ted.typing_effect("\nYou ask him:\n")
+            ted.typing_effect('"How far in are we going?"\n')
+            
+            ted.typing_effect("He answers:")
+            ted.typing_effect(""""Aahh, eh- i- it's just down here some place..."\n""")
+
+            ted.typing_effect("\nYou get the creeps, and you start feeling uneasy about the situation..\n")
+            ted.typing_effect("You subtly start looking for exits.\n")
+            ted.typing_effect("He notices you're scared.\n")
+            
+            ted.faster_typing_effect("He turns around in a quick motion!\n")
+            ted.faster_typing_effect("BANG!\n")
+            ted.typing_effect("He knocks you out.\n")
+
+            scene_roulette()
         elif action == "no":
             # You walk away, and find supplies to recover.
             pass

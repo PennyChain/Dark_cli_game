@@ -21,7 +21,7 @@ def scene_1():
 
         valg = input().strip().lower()
         
-        action = ted.interpret_choice(valg, ted.yes_choices, ted.no_choices, ted.third_choices, ted.quit_choices)
+        action = ted.interpret_choice(valg, ted.yes_choices, ted.no_choices, ted.third_choices, ted.four_choices, ted.quit_choices)
 
         if action == "yes":
             ted.typing_effect("\n\nYou enter the forest.\n")
