@@ -1,14 +1,14 @@
 from effects import ted
 
-ted.typing_effect("\nAs you walk down the uneaven hill, and get closer to the light, you see a man sitting there.\n")
-ted.slow_typing_effect("All alone with his campfire.\n")
-ted.typing_effect("He looks friendly, ")
-ted.typing_effect("but his clothes are worn down to his skin...\n")
-ted.typing_effect("It looks like he is grilling some food with a stick, maybe a rabbit?\n")
-ted.typing_effect("\nDo you approach him?\n")
-
 def scene_approach_man():
     x = 0
+
+    ted.typing_effect("\nAs you walk down the uneaven hill, and get closer to the light, you see a man sitting there.\n")
+    ted.slow_typing_effect("All alone with his campfire.\n")
+    ted.typing_effect("He looks friendly, ")
+    ted.typing_effect("but his clothes are worn down to his skin...\n")
+    ted.typing_effect("It looks like he is grilling some food with a stick, maybe a rabbit?\n")
+    ted.typing_effect("\nDo you approach him?\n")
     
     while True:
         if x >= 1:

@@ -26,7 +26,7 @@ def scene_1():
         if action == "yes":
             ted.typing_effect("\n\nYou enter the forest.\n")
             time.sleep(0.3)
-            ted.typing_effect("You continue walking into the thick forest.\n")
+            ted.typing_effect("As you're walking through the forest, its getting darker and darker..\n")
             time.sleep(0.15)
             scene_forest1()
             break

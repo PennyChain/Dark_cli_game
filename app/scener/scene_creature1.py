@@ -36,7 +36,7 @@ def scene_creature1():
         
         valg = input().strip().lower()
 
-        action = ted.interpret_choice(valg, local_yes_choices, local_no_choices, local_third_choices, ted.four_choices, local_four_choices, ted.quit_choices)
+        action = ted.interpret_choice(valg, local_yes_choices, local_no_choices, local_third_choices, local_four_choices, ted.quit_choices)
 
         if action == "yes":
             ted.typing_effect("\nYou find the closest tree and climb up it as fast as you can!\n")
@@ -64,12 +64,12 @@ def scene_creature1():
             ted.typing_effect("It looks like some sort of morphed human being, but its just ")
             ted.slow_typing_effect("not a human..\n")
             ted.faster_typing_effect("\nIT SLASHES YOUR ARM!\n")
-            ted.typing_effect("You fight back with all your force\n")
+            ted.typing_effect("\nYou fight back with all your force\n")
             ted.typing_effect("You manage to defend yourself ")
             ted.slow_typing_effect("barely... \n")
             time.sleep(0.2)
-            ted.typing_effect("The creature limps away, ")
-            ted.slow_typing_effect("so do you.\n")
+            ted.typing_effect("The creature limps away. ")
+            ted.slow_typing_effect("So do you.\n")
             time.sleep(0.2)
             ted.typing_effect("You need to find some healing supplies..\n")
             scene_scavenge()

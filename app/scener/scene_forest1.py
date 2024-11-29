@@ -15,8 +15,6 @@ def scene_forest1():
         "use the flashlight", "turn flashlight on", "flashlight on", "switch flashlight on", "I do"
     ])
     
-    ted.typing_effect("It's getting darker the further in you go.\n")
-    time.sleep(0.4)
     ted.typing_effect("Suddenly, everything goes quiet")
     ted.slower_typing_effect("...\n")
     time.sleep(0.2)
