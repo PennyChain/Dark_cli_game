@@ -1,6 +1,8 @@
 import time
 from effects import ted
-from scener import scene_died, scene_roulette
+from scener.scene_roulette import scene_roulette
+from scener.scene_more_walking import scene_more_walking
+from scener.scene_imprisoned import scene_imprisoned
 
 def scene_scavenge():
     x = 0
@@ -19,9 +21,10 @@ def scene_scavenge():
         "kill", "attack", "down"
     ]
 
+    time.sleep(1)
     ted.typing_effect("\n\nYou limp away with a stick as a support for your destroyed legs.\n")
     time.sleep(0.3)
-    ted.typing_effect("As you walk, you cross ways with an old man, big beard, ragged clothes, survival gear.\n")
+    ted.typing_effect("As you walk, you cross ways with an old man. Big beard, ragged clothes, and survival gear.\n")
     time.sleep(0.3)
     ted.typing_effect("You didnt really have time to run or hide, since you're hurt.\n")
     time.sleep(0.3)
@@ -40,7 +43,8 @@ def scene_scavenge():
         action = ted.interpret_choice(valg, local_yes_choices, local_no_choices, local_third_choices, ted.four_choices, ted.quit_choices)
 
         if action == "yes":
-            ted.typing_effect("\nTurns out he was telling you the truth. You walk you can see the abandoned hospital.\n")
+            ted.typing_effect("\nTurns out he was telling you the truth.\n")
+            ted.typing_effect("While you walk you can see the abandoned hospital.\n")
             time.sleep(0.3)
             ted.typing_effect("As you approach, you can see that it has been overtaken, and it looks like someone lives there..\n")
             time.sleep(0.3)
@@ -92,11 +96,25 @@ def scene_scavenge():
 
             scene_roulette()
         elif action == "no":
-            # You walk away, and find supplies to recover.
-            pass
+            ted.typing_effect("You decline his offer and keep walking.\n")
+            time.sleep(0.3)
+            ted.typing_effect("He asks again with an slight aggressive tone while you were just about to walk away.\n")
+            time.sleep(0.6)
+            ted.typing_effect('\n"I- I can help you, you know that!?\n"')
+            ted.typing_effect("\nYou respond in a nervous tone:\n")
+            ted.typing_effect(""" "I- I- I'm good, thanks.."\n """)
+            ted.typing_effect("\nYou really dodged a bullet there...\n")
+            
+            scene_more_walking()
         elif action == "third":
-            # Imprisons you, you need to escape?
-            pass
+            ted.typing_effect("You take ur branch and swing at his face.\n")
+            ted.typing_effect("Since you're badly hurt, he dodges it with ease.\n")
+            ted.slow_typing_effect("\nWhat a mistake...\n")
+            ted.typing_effect("\nHe takes out a revolver and points it at you.\n")
+            ted.typing_effect("He goes behind you with the revolver pointing at the back of your head.")
+            ted.typing_effect("Suddenly everything goes dark...\n")
+
+            scene_imprisoned()
         elif action == "quit":
             exit_game = True
             break
