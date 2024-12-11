@@ -5,10 +5,10 @@ from effects import ted
 def scene_roulette():
     x = 0
         
-    ted.typing_effect("test\n")
-    ted.typing_effect("\n")
     ted.typing_effect("")
-    ted.typing_effect("\n\n")
+    ted.typing_effect("")
+    ted.typing_effect("")
+    ted.typing_effect("")
     
     while True:
         if x >= 1:
